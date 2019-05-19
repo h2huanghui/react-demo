@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
-import isEqual from 'lodash/isEqual'
-import cloneDeep from 'lodash/cloneDeep';
+// import isEqual from 'lodash/isEqual'
+// import cloneDeep from 'lodash/cloneDeep';
 // import Immutable from 'seamless-immutable'
-import {List,is,Map,fromJS} from 'immutable';
+import {List,is,fromJS} from 'immutable';
 
 import DATA from '../data.json'
 
@@ -67,8 +67,6 @@ export default class Home extends Component {
   handleClick(){
     let list = this.state.list
     
-    // list[0]['name'] = 'qinfan'
-
     let index1,index2,index3;
     list.forEach((team,i)=>{
       if(team.get('name') === 'TOT'){
