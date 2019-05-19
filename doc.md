@@ -48,6 +48,11 @@ shouldComponentUpdate(nextProps, nextState) {
 
 
 
+在上面的示例中，因为 C2 的 shouldComponentUpdate 返回 false，React 就不需要生成新的虚拟 DOM，也就不需要更新 DOM，注意 React 甚至不需要调用 C4 和 C5 的 shouldComponentUpdate。
+
+C1 和 C3 的 shouldComponentUpdate 返回 true，所以 React 需要向下到叶子节点检查它们，C6 返回 true，因为虚拟 DOM 不相等，需要更新 DOM。最后感兴趣的是 C8，对于这个节点，React 需要计算虚拟 DOM，但是因为它和旧的相等，所以不需要更新 DOM。
+
+
 
 ### PureComponent
 
