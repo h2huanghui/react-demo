@@ -1,0 +1,70 @@
+{
+  "list": [
+    {
+      "name": "TOT",
+      "players": [
+        {
+          "name": "Kane",
+          "age": 23,
+          "skills": [
+            {
+              "name": "shoot",
+              "lv": 5
+            },
+            {
+              "name": "pass",
+              "lv": 4
+            }
+          ]
+        },
+        {
+          "name": "Eriksen",
+          "age": 24,
+          "skills": [
+            {
+              "name": "shoot",
+              "lv": 4
+            },
+            {
+              "name": "pass",
+              "lv": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ARS",
+      "players": [
+        {
+          "name": "Ozil",
+          "age": 28,
+          "skills": [
+            {
+              "name": "shoot",
+              "lv": 3
+            },
+            {
+              "name": "pass",
+              "lv": 4
+            }
+          ]
+        },
+        {
+          "name": "Shit",
+          "age": 20,
+          "skills": [
+            {
+              "name": "shoot",
+              "lv": 1
+            },
+            {
+              "name": "pass",
+              "lv": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
