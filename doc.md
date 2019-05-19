@@ -106,11 +106,8 @@ immutable使用先进的tries(字典树)技术实现结构共享来解决性能�
 
 
 
-### 缺点
 
-额外引入资源文件、学习成本、容易跟原生对象混淆，对现有代码的改造，使用 Immutable.js 成本实在太大。
-
-常用的两个库
+### 常用的两个库
 
 #### immutable.js 
 
@@ -119,6 +116,12 @@ Immutable.js 压缩后有 16K，它内部实现了一套完整的 Persistent Dat
 #### seamless-immutable
 
 压缩后只有 2K，它并没有实现完整的 Persistent Data Structure，而是使用Object.defineProperty 扩展了 JavaScript 的 Array 和 Object 对象来实现，只支持 Array 和 Object 两种数据类型，所以这个库对代码的入侵特别校。
+
+
+
+### 缺点
+
+额外引入资源文件、学习成本、容易跟原生对象混淆，对现有代码的改造，使用 Immutable.js 成本实在太大。
 
 
 ## over
