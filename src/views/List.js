@@ -19,8 +19,7 @@ class PlayerItem extends Component{
     console.log('render Item')
     let player = this.props.item;
     return <div className='player'>
-      <div>{player.name} -- {player.age}</div>
-      <div>
+      <div>{player.name} -- {player.age} -- 
         {player.skills.map((skill,i)=>{
           return <span key={'skill-'+i}>{skill.name}:{skill.lv}  </span>
         })}
@@ -57,7 +56,7 @@ export default class Home extends Component {
 
 
   handleClick(){
-    let list = cloneDeep(this.state.list);
+    let list = this.state.list
     
     // let index1,index2,index3;
     list.forEach((team,i)=>{
