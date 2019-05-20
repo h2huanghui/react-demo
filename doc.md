@@ -15,6 +15,8 @@
 ![render 4](img/render4.jpeg)
 
 
+### demo
+
 ### lifecycle
 
 react 16 之前的生命周期
@@ -69,9 +71,6 @@ C1 和 C3 的 shouldComponentUpdate 返回 true，所以 React 需要向下到�
 
 
 
-
-
-
 ### immutable 闪亮登场
 
 什么叫做Immutable，mutable这个单词是可变的意思，那个immutable 就是不可变的意思。对 Immutable 对象的任何修改或添加删除操作都会返回一个新的 Immutable 对象。
@@ -88,6 +87,8 @@ immutable使用先进的tries(字典树)技术实现结构共享来解决性能�
 
 tires字典树
 
+假设如下数据结构。
+
 ```js
 const data = {
   to: 7,
@@ -102,16 +103,21 @@ const data = {
 
 ```
 
+字典树表示
 
 ![im1](img/im1.jpg)
 
+假如把tea的值从3置为14
+
 ![im2](img/im2.jpg)
+
+可以看到图2绿色部分，不需要去遍历整棵树，只要从root开始找就行
 
 ![im3](img/im3.png)
 
+实际使用时，可以创建一个新的引用，如图3，data.tea建一个新的节点，其他节点和老的对象共享，而老的对象还是保持不变
 
-
-#### 常用的三种数据类型
+#### Immutable常用的三种数据类型
 
 - List: 有序索引集，类似JavaScript中的Array。
 - Set: 没有重复值的集合。
@@ -120,8 +126,6 @@ const data = {
 同时有get、set、getIn、setIn等 forEach、map等方法来处理数据。
 
 ### demo2
-
-
 
 
 ### 常用的两个库
