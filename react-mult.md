@@ -270,4 +270,43 @@ import DetailPage from './views/DetailPage'
     <Route path="/detail" component={DetailPage} />
 </Router>
 ```
+刷新detail，不对，嘿嘿，待会再讲。
+
+####目前为止，单页应用基本上搞定了！ 撒花！！！
+
+然后
+
+## 多页应用
+
+### 多入口
+
+多页应用，无非是多入口而已。
+
+####新建页面
+
+比如我order和home两个单页
+
+移动一下，不想写了。
+
+#### 配置入口
+
+```js
+{
+    home: path.join(APP_PATH,'/views/home/entry.js'),
+    order: path.join(APP_PATH,'/views/order/entry.js'),
+}
+```
+多个html
+```js
+new HtmlWebpackPlugin({
+    filename: `home/index.html`,
+    template: path.join(APP_PATH,'/index.html'),
+    chunks:['home']
+}),
+new HtmlWebpackPlugin({
+    filename: `order/index.html`,
+    template: path.join(APP_PATH,'/index.html'),
+    chunks:['order']
+}),
+```
 

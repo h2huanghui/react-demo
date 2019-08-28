@@ -5,7 +5,11 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const ROOTPATH = path.join(process.cwd());
 const APP_PATH = path.join(ROOTPATH, '/src')
 module.exports = {
-    entry: path.join(APP_PATH,'/App.js'),
+    // entry: path.join(APP_PATH,'/App.js')
+    entry: {
+        home: path.join(APP_PATH,'/views/home/entry.js'),
+        order: path.join(APP_PATH,'/views/order/entry.js'),
+    },
     output:{
         filename: 'bundle.js',
         path: path.join(ROOTPATH,'/dist')
@@ -71,7 +75,14 @@ module.exports = {
     },
     plugins:[
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            filename: `home/index.html`,
+            template: path.join(APP_PATH,'/index.html'),
+            chunks:['home']
+        }),
+        new HtmlWebpackPlugin({
+            filename: `order/index.html`,
+            template: path.join(APP_PATH,'/index.html'),
+            chunks:['order']
         }),
         new MiniCssExtractPlugin({
             filename: "bundle.css",
