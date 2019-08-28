@@ -235,7 +235,8 @@ npm i -D mini-css-extract-plugin
 ```js
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 ```
-替换style-loader 为MiniCssExtractPlugin.loader，注意顺序，增加plugin
+`process.env.NODE_ENV === 'development'`为`style-loader`，生产环境替换为`MiniCssExtractPlugin.loader`，注意顺序，增加`plugins`
+
 ```js
 new MiniCssExtractPlugin({
     filename: "bundle.css",
