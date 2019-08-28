@@ -272,7 +272,7 @@ import DetailPage from './views/DetailPage'
 ```
 刷新detail，不对，嘿嘿，待会再讲。
 
-####目前为止，单页应用基本上搞定了！ 撒花！！！
+#### 目前为止，单页应用基本上搞定了！ 撒花！！！
 
 然后
 
@@ -282,7 +282,7 @@ import DetailPage from './views/DetailPage'
 
 多页应用，无非是多入口而已。
 
-####新建页面
+#### 新建页面
 
 比如我order和home两个单页
 
@@ -377,11 +377,13 @@ optimization:{
     }
 },
 ```
+然后增加common到HtmlWebpackPlugin的chunks
+
+搞定
+
+还有很多优化，什么压缩什么鬼的，不讲了。。
+
+## 结束！最后的撒花！！！🎉🎉🎉
 
 
-
-
-
-
-
-
+大家有时间可以试着搭搭看，很好玩的～

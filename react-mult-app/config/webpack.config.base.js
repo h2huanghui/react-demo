@@ -89,12 +89,12 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: `home/index.html`,
             template: path.join(APP_PATH,'/index.html'),
-            chunks:['home']
+            chunks:['common','home']
         }),
         new HtmlWebpackPlugin({
             filename: `order/index.html`,
             template: path.join(APP_PATH,'/index.html'),
-            chunks:['order']
+            chunks:['common','order']
         }),
         new MiniCssExtractPlugin({
             filename: "[name]/[name].css",
