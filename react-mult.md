@@ -249,7 +249,7 @@ new MiniCssExtractPlugin({
 
 其他桶，暂不赘述
 
-安装
+新版本只需要安装react-router-dom
 
 ```
 npm i react-router-dom
@@ -360,7 +360,7 @@ plugins: [
 
 #### 提取公用的js optimization.splitChunks
 
-webpack4 把plugin去掉了
+webpack4 把CommonsChunkPlugin去掉了，代替的是optimization.splitChunks
 
 添加如下配置
 ```
