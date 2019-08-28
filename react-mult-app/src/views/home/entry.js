@@ -4,7 +4,10 @@ import ReactDOM from 'react-dom'
 import '../../index.scss'
 class App extends Component {
     render(){
-        return <a href="/order">To order</a>
+        return <div>
+            <h2>Home</h2>
+            <a href="/order">To order</a>
+            </div>
     }
 }
 

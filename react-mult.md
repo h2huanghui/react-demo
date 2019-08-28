@@ -296,6 +296,14 @@ import DetailPage from './views/DetailPage'
     order: path.join(APP_PATH,'/views/order/entry.js'),
 }
 ```
+更改output js的 filename
+```js
+filename: '[name]/[name].js',
+```
+更改mini-css-extract-plugin 输出css的 filename
+```js
+filename: "[name]/[name].css",
+```
 多个html
 ```js
 new HtmlWebpackPlugin({
@@ -309,4 +317,71 @@ new HtmlWebpackPlugin({
     chunks:['order']
 }),
 ```
+以上配置可以提出，或者用按一定约定，用node 读取目录自动生成
+
+我们看下bundle结果
+
+### historyApiFallback
+
+刷新/order/detail， 404
+
+生产环境我们需要服务端配置controller /order 、 /order/detail 指向同一个html模版
+
+开发环境怎么办 webpack-dev-server有个 historyApiFallback 的配置
+```js
+historyApiFallback: {
+    rewrites: [
+        { from: /^\//, to: '/home/index.html' },
+        { from: /^\/home/, to: '/home/index.html' },
+        { from: /^\/order.*/, to: '/order/index.html' },
+    ]
+}
+
+```
+
+#### 哦了，多页面应用也OK了，撒花🎉
+
+### 优化
+
+#### 酷炫模块分析占比webpack-bundle-analyzer
+
+```
+npm i -D webpack-bundle-analyzer
+```
+
+可以在bundle时添加
+```
+const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer');
+
+plugins: [
+    new BundleAnalyzerPlugin()
+]
+```
+
+#### 提取公用的js optimization.splitChunks
+
+webpack4 把plugin去掉了
+
+添加如下配置
+```
+optimization:{
+    splitChunks:{
+        cacheGroups: {
+            vendor: {
+                test: /[\\/]node_modules[\\/].*\.js$/,
+                chunks: "initial", 
+                name: "common", 
+                enforce: true,
+            },
+        }
+    }
+},
+```
+
+
+
+
+
+
+
 

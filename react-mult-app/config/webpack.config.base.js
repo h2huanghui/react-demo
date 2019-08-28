@@ -11,7 +11,7 @@ module.exports = {
         order: path.join(APP_PATH,'/views/order/entry.js'),
     },
     output:{
-        filename: 'bundle.js',
+        filename: '[name]/[name].js',
         path: path.join(ROOTPATH,'/dist')
     },
     module:{
@@ -73,6 +73,18 @@ module.exports = {
             
         ]
     },
+    optimization:{
+        splitChunks:{
+            cacheGroups: {
+                vendor: {
+                    test: /[\\/]node_modules[\\/].*\.js$/,
+                    chunks: "initial", 
+                    name: "common", 
+                    enforce: true,
+                },
+            }
+        }
+    },
     plugins:[
         new HtmlWebpackPlugin({
             filename: `home/index.html`,
@@ -85,7 +97,7 @@ module.exports = {
             chunks:['order']
         }),
         new MiniCssExtractPlugin({
-            filename: "bundle.css",
+            filename: "[name]/[name].css",
             chunkFilename: "[id].css"
         })
     ],

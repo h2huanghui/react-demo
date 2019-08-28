@@ -6,6 +6,14 @@ module.exports = merge(baseConfig,{
     devtool:'inline-source-map',
     devServer:{
         contentBase:'../dist',
-        port:'3333'
-    }
+        port:'3333',
+        historyApiFallback: {
+            rewrites: [
+                { from: /^\/$/, to: '/home/index.html' },
+                { from: /^\/home/, to: '/home/index.html' },
+                { from: /^\/order.*/, to: '/order/index.html' },
+            ]
+        }
+    },
+    
 })

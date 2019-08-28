@@ -4,7 +4,7 @@ export default class DetailPage extends Component {
     render() {
         return (
             <div>
-            DetailPage
+                <h2>Order Detail Page</h2>
             </div>
         )
     }
