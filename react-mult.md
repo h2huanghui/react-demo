@@ -75,10 +75,10 @@ module.exports = merge(baseConfig,{
 
 运行一下~
 
-#### 安装babel-loader
+#### 安装babel
 引入react要配置babel
 ```
-npm i -D babel-loader@7 babel-core babel-cli babel-polyfill babel-preset-react babel-preset-env
+npm i -D babel-loader babel-cli babel-polyfill @babel/core @babel/preset-env @babel/preset-react
 ```
 ```js
 module:{
@@ -95,7 +95,7 @@ module:{
 
 ```js
 {
-    "presets":["env","react"]
+    "presets": ["@babel/preset-env","@babel/preset-react"]
 }
 ```
 #### 引入react
@@ -210,7 +210,7 @@ module.exports = {
 新建`index.scss`
 ```scss
 body{
-    background: #999;
+    background: #d2fafb;
     .title{
         color: red;
         transform: rotate(-10deg)
@@ -387,4 +387,4 @@ optimization:{
 ## 结束！最后的撒花！！！🎉🎉🎉
 
 
-大家有时间可以试着搭搭看，很好玩的～
+大家有时间可以试着搭搭看，很好玩的～
